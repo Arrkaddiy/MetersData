@@ -8,15 +8,39 @@
     <artifactId>MetersData</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
     <properties>
+        <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
+        <spring.web.version>5.2.8.RELEASE</spring.web.version>
         <apache.poi.version>4.1.2</apache.poi.version>
     </properties>
 
     <dependencies>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.web.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Apache -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>${apache.poi.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
