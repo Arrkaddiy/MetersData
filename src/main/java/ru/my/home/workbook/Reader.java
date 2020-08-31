@@ -5,11 +5,23 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Reader {
     private static Logger LOGGER = LoggerFactory.getLogger(Reader.class);
+
+    @PostConstruct
+    public void init() {
+        LOGGER.debug("Reader is enable");
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        LOGGER.debug("Reader is disabled");
+    }
 
     /**
      * Чтение существующего Excel файла по имени
