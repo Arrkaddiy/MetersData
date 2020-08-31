@@ -4,11 +4,23 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Writer {
     private static Logger LOGGER = LoggerFactory.getLogger(Writer.class);
+
+    @PostConstruct
+    public void init() {
+        LOGGER.debug("Writer is enable");
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        LOGGER.debug("Writer is disabled");
+    }
 
     /**
      * Запись нового Excel файла по имени
