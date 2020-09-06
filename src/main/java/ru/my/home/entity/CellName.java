@@ -19,4 +19,9 @@ public class CellName {
     public ColumnName getColumnName() {
         return columnName;
     }
+
+    @Override
+    public String toString() {
+        return "Ячейка " + columnName + rowIndex;
+    }
 }
